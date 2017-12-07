@@ -67,7 +67,7 @@ bot.on('message', message => {
             break;
 
         case "print":
-            message.channel.sendMessage("Current Minimum Bid is: " + minBid ". Minimum outbid is: " + minIncrease + ".\n\n");
+            message.channel.sendMessage("Current Minimum Bid is: " + minBid + ". Minimum outbid is: " + minIncrease + ".\n\n");
             message.channel.sendMessage("Printing current bid list:\n\nSingers:\tHigh Bid:\tPaid for By:\tSongs:\n");
             for (i = 0; i < singers.length; i++) {
                 message.channel.sendMessage(singers[i] + "\t" + amounts[i] + "\t" + bidders[i] + "\t" + songs[i]);
