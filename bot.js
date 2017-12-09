@@ -171,6 +171,23 @@ bot.on('message', message => {
             }
             break;
 
+        case "add":
+            if (message.author.username == user1 || message.author.username == user2 || message.author.username == user3 || message.author.username == user4) {
+                if (!(commands[1] && commands[2] && commands[3] && commands[4])) {
+                    message.channel.sendMessage("Invalid format. Correct format is k.add singerName bidAmount bidderName song");
+                }
+                message.channel.sendMessage("Bid accepted.");
+                amounts.push(parseInt(commands[2], 10));
+                singers.push(commands[1].toLowerCase());
+                songs.push(commands[4]);
+                bidders.push(commands[3]);
+            }
+            else {
+                message.channel.sendMessage("You don't have permission to use this command.");
+            }
+            break;
+
+            
         default:
             message.channel.sendMessage("Invalid command, please see k.help");
             break;
